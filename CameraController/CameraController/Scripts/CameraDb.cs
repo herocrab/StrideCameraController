@@ -27,6 +27,9 @@ namespace CameraController.Scripts
 
         public void ActivateCamera(CameraComponent cameraComponent)
         {
+            // Lazy registration
+            RegisterCamera(cameraComponent);
+
             foreach (var camera in cameraDb) {
                 camera.Enabled = false;
             }
