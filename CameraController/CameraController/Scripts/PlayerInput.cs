@@ -75,7 +75,7 @@ namespace CameraController.Scripts
 
         private void DisplayDebugInfo()
         {
-            DebugText.Print("Press X or Y to change cameras.", debugTextPos);
+            DebugText.Print("Press X or Y to change cameras. Left click to move.", debugTextPos);
         }
 
         private void EvaluatePlayerInput()
@@ -113,7 +113,7 @@ namespace CameraController.Scripts
                 resultList, CollisionFilterGroups.DefaultFilter, CollisionFilterGroupFlags.CustomFilter10);
 
             if (!resultList.Any()) {
-                Log.Debug($"Destination point could not be identified, check simulation and collision group.");
+                Log.Debug($"Destination point could not be found, are you clicking ground?");
                 return;
             }
 
