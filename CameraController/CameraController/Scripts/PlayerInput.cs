@@ -80,11 +80,12 @@ namespace CameraController.Scripts
 
         private void EvaluatePlayerInput()
         {
-            if (Input.IsKeyPressed(Keys.X)) {
+            // This would all be handled by the trigger collider and event
+            if (Input.IsKeyPressed(Keys.X) && playerInputCamera != cameraX) {
                 cameraDb?.ActivateCamera(cameraX);
             }
 
-            if (Input.IsKeyPressed(Keys.Y)) {
+            if (Input.IsKeyPressed(Keys.Y) && playerInputCamera != cameraY) {
                 cameraDb?.ActivateCamera(cameraY);
             }
 

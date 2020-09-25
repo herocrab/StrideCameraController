@@ -1,4 +1,5 @@
-﻿using Stride.Engine;
+﻿using Stride.Core.Diagnostics;
+using Stride.Engine;
 
 namespace CameraController.Scripts
 {
@@ -11,7 +12,16 @@ namespace CameraController.Scripts
 
         private void RegisterCamera()
         {
+            Log.ActivateLog(LogMessageType.Debug);
+
             var cameraDb = Services.GetService<CameraDb>();
+            var cameraComponent = Entity.Get<CameraComponent>();
+
+            if (cameraComponent == null) {
+                Log.Error($"{Entity.Name} attempted to register a camera when no camera component is attached.");
+                return;
+            }
+
             cameraDb?.RegisterCamera(Entity.Get<CameraComponent>());
         }
     }

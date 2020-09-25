@@ -19,14 +19,24 @@ namespace CameraController.Scripts
 
         public void RegisterCamera(CameraComponent cameraComponent)
         {
+            if (cameraComponent == null) {
+                Log.Error("Entity attempted to register a camera when no camera is attached.");
+                return;
+            }
+
             if (!cameraDb.Contains(cameraComponent)) {
                 cameraDb.Add(cameraComponent);
-                Log.Info($"{cameraComponent.Entity.Name} camera has been registered with camera db.");
+                Log.Info($"{cameraComponent?.Entity.Name} camera has been registered with camera db.");
             }
         }
 
         public void ActivateCamera(CameraComponent cameraComponent)
         {
+            if (cameraComponent == null) {
+                Log.Error("Entity attempted to activate a camera when no camera is attached.");
+                return;
+            }
+
             // Lazy registration
             RegisterCamera(cameraComponent);
 
