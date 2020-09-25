@@ -6,6 +6,6 @@ Press X or Y to change cameras, left click to "move."
 ---
 
 The camera controller system includes:
-- A camera Db for adding multiple cameras with a simple ActivateCamera API
+- A camera Db service for adding multiple cameras with a simple ActivateCamera API
 - A camera agent script for registering camera components
 - A player input script which demonstrates updating the camera component reference and raycasting
