@@ -54,7 +54,7 @@ namespace CameraController.Scripts
         {
             Log.ActivateLog(LogMessageType.Debug);
 
-            // Register this class as a service, this script must execute before camera agent scripts... it is set to 0 in game studio.
+            // Register this class as a service, this script must execute before camera agent scripts... set priorities accordingly in game studio.
             Services.AddService(this);
         }
 
